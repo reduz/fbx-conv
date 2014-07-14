@@ -38,12 +38,15 @@ namespace modeldata {
 		std::vector<NodePart *> parts;
 		std::vector<Node *> children;
 		FbxNode *source;
+		bool isbone;
 
-		Node(const char *id = NULL) : source(0) {
+		Node(const char *id = NULL) : source(0), isbone(false) {
+
 			memset(&transform, 0, sizeof(transform));
 			transform.scale[0] = transform.scale[1] = transform.scale[2] = 1.f;
 			if (id != NULL)
 				this->id = id;
+
 		}
 
 		Node(const Node &copyFrom) {

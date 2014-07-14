@@ -52,11 +52,11 @@ namespace log {
 		Log(LogMessages * const &messages, const int &filter = -1) : messages(messages), filter(filter) {}
 
 		virtual ~Log() {
-			delete messages;
+			//delete messages;
 		}
 
 		const char *msg(int code) {
-			return (*messages)[code];
+			return "msg";//return (*messages)[code];
 		}
 
 		const char *vformat(int code, va_list vl) {

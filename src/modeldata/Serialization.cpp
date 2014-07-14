@@ -148,10 +148,13 @@ void Node::serialize(json::BaseJSONWriter &writer) const {
 		writer << "scale" = transform.scale;
 	if (transform.translation[0] != 0. || transform.translation[1] != 0. || transform.translation[2] != 0.)
 		writer << "translation" = transform.translation;
+	if (isbone)
+		writer << "isBone" = isbone;
 	if (!parts.empty())
 		writer << "parts" = parts;
 	if (!children.empty())
 		writer << "children" = children;
+
 	writer << json::end;
 }
 

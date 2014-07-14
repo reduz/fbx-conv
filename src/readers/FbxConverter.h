@@ -199,7 +199,10 @@ namespace readers {
 				return;
 			}
 			Node *n = new Node(node->GetName());
+			//printf("NAME: %s, is skeleton: %p\n",node->GetName(),node->GetSkeleton());
 			n->source = node;
+			n->isbone=node->GetSkeleton()!=NULL;
+
 			nodeMap[node] = n;
 			if (parent == 0)
 				model->nodes.push_back(n);
